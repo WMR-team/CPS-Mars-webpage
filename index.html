@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three Percent is Enough: Semi-Supervised Martian Segmentation Labeling with Active Learning</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Three Percent is Enough: Semi-Supervised Martian Segmentation Labeling with Active Learning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Anonymous Authors</a><sup>1</sup>
+            </span>
+            <!-- <span class="author-block">
+              <a>Muyao Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://ellinier.github.io/">Ruyi Zhou</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Liang Ding</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Huaiguang Yang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Haibo Gao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Zongquan Deng</a><sup>1</sup>
+            </span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Anonymous Institute</span>
+            <!-- <span class="author-block"><sup>1</sup>Harbin Institute of Technology</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (Coming soon)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming soon)</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Accurate, large-scale Martian segmentation datasets are a cornerstone of autonomous scene
+            understanding in support of exploration and navigation in Martian environments. However, 
+            high-quality segmentation labeling on planetary images requires annotators to have professional 
+            extraterrestrial geological knowledge, and even skilled annotators need a long time to label a 
+            single image in detail. In this paper, we propose a semi-automatic annotation method for 
+            Martian scene segmentation. 
+          </p>
+          <p>
+            By integrating a semi-supervised segmentation network architecture with an active learning 
+            strategy, our framework achieves near-fully supervised performance using a minimal amount of 
+            manual annotations, significantly reducing dependence on human experts. Experiments on the 
+            S<sup>5</sup>Mars dataset show that our framework reaches 76.73% mIoU with only 3.38% of the manual 
+            annotations (169 images), corresponding to 95.73% of the performance (80.18% mIoU) of the 
+            official fully supervised model trained on 5000 labeled images. This annotation ratio is 
+            substantially lower than the nearly 20% labeled data typically required by conventional 
+            semi-supervised approaches, highlighting the efficiency of our method for large-scale Martian 
+            scene annotation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Motivation. -->
+        <!-- <h3 class="title is-4" style="margin-top: 3rem;">Motivation</h3>
+        <div class="content has-text-justified">
+          <p>
+            We propose an efficient semi-autonomous framework for the Martian segmentation labeling task,
+            aiming to leverage a very small amount of maunally labeled images to generate tens of thousands
+            of high-quality labels, supporting future Mars exploration and scientific research.
+          </p>
+        </div> -->
+    <!--/ Motivation. -->
+
+    <!-- Contribution. -->
+        <!-- <h3 class="title is-4">Contribution</h3>
+        <div class="content has-text-justified">
+          <p>
+            1. A iterative open-sourced framework combined with semi-supervised learning and active query 
+            strategy is developed to produce large-scale Martian segmentation dataset with minimize human expert labelling effort.
+          </p>
+          <p>
+            2. A CPS-Mars architecture based on cross pseudo supervision (CPS) is proposed for SSL with self-defined loss function
+            dealing with inter-class imbalance problem in Mars scene dataset.
+          </p>
+          <p>
+            3. Performance of our framework with optimized modules and strategies reaches 95.73% accuracy on labeling S^5Mars 
+            segmentation dataset with only nearly 3% of manually labeled images.
+          </p>
+        </div> -->
+    <!--/ Contribution. -->
+
+    <!-- Framework. -->
+        <h3 class="title is-4" style="margin-top: 3rem;">Framework</h3>
+        <div class="has-text-centered">
+            <img src="./static/images/SSL2.png"
+                    alt="Semi-supervised active learning framework for Martian segmentation labeling."
+                    style="max-width: 100%; height: auto;"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            The overall framework of the semi-supervised active learning for Mars segmentation labeling is shown as follows. 
+            The framework has two main modules and works in a cyclic iterative manner. The semi-supervised learning architecture
+            trains the segmentation model to automatic segment unlabeled Mars images in the dataset, while the active learning modules
+            strategically queries unlabeled samples most worthy of manual labeling based on their pixel-wise soft pseudo-labels of the
+            trained segmentation model. These newly labeled data are then returned to update the training set for new round of semi-supervised learning.
+          </p>
+        </div>
+    <!--/ Framework. -->
+
+    <!-- SSL architecture. -->
+        <h3 class="title is-4">SSL Architecture</h3>
+        <div class="has-text-centered">
+            <img src="./static/images/CPSnew.png"
+                    alt="Semi-supervised learning architecture for Mars scene segmentation."
+                    style="max-width: 100%; height: auto;"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            The segmentation model is established based on classic CPS in dual-branch structure. These two branches are exact the same in structure
+            but different in parameters, introducing perturbations to the model at the network level. Each branch contains a student-teacher network pair.
+            The student network is trained under the strong supervision of the labeled data with their ground-truth labels, as well as the weak supervison of 
+            the unlabeled data with their pseudo-labels generated from the teacher network.
+          </p>
+        </div>
+    <!--/ SSL architecture. -->
+
+    <!-- Performance Evaluation. -->
+        <h3 class="title is-4">Peformance Evaluation</h3>
+        <div class="content performance-table-wrapper">
+          <table class="table is-hoverable is-fullwidth performance-table">
+            <thead>
+              <tr class="thick-border-top">
+                <th colspan="3" class="header-center">Method</th>
+                <th colspan="9" class="header-center">Class IoU (%)</th>
+                <th rowspan="2" class="header-middle">mIoU(%)</th>
+              </tr>
+              <tr>
+                <th>SSL architecture</th>
+                <th>Active query strategy</th>
+                <th>Query frequencies</th>
+                <th>Bedrock</th>
+                <th>Ridge</th>
+                <th>Soil</th>
+                <th>Sky</th>
+                <th>Sand</th>
+                <th>Rock</th>
+                <th>Trace</th>
+                <th>Rover</th>
+                <th>Hole</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="thick-border-top">
+                <td><a href="https://arxiv.org/abs/2106.05095" target="_blank">ST</a></td>
+                <td>✗</td>
+                <td>-</td>
+                <td>85.48</td>
+                <td>88.37</td>
+                <td>62.62</td>
+                <td>90.82</td>
+                <td>53.93</td>
+                <td>6.96</td>
+                <td>23.52</td>
+                <td>12.58</td>
+                <td>00.00</td>
+                <td>41.19</td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2004.08514" target="_blank">DMT</a></td>
+                <td>✗</td>
+                <td>-</td>
+                <td>85.60</td>
+                <td>89.29</td>
+                <td>65.04</td>
+                <td>93.93</td>
+                <td>55.10</td>
+                <td>15.57</td>
+                <td>16.36</td>
+                <td>00.00</td>
+                <td>00.00</td>
+                <td>60.13</td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/1908.05724" target="_blank">s4GAN</a></td>
+                <td>✗</td>
+                <td>-</td>
+                <td>87.34</td>
+                <td>91.24</td>
+                <td>73.76</td>
+                <td>94.00</td>
+                <td class="best-value">59.55</td>
+                <td>13.74</td>
+                <td>25.54</td>
+                <td>27.67</td>
+                <td>00.00</td>
+                <td>52.54</td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2104.04465" target="_blank">ReCo</a></td>
+                <td>✗</td>
+                <td>-</td>
+                <td>77.88</td>
+                <td>67.18</td>
+                <td>55.15</td>
+                <td>82.03</td>
+                <td>47.10</td>
+                <td>6.05</td>
+                <td>44.34</td>
+                <td>39.13</td>
+                <td>20.45</td>
+                <td>38.51</td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2106.01226" target="_blank">CPS</a></td>
+                <td>✗</td>
+                <td>-</td>
+                <td>85.04</td>
+                <td>89.48</td>
+                <td>63.35</td>
+                <td>93.85</td>
+                <td>49.78</td>
+                <td>5.26</td>
+                <td>62.83</td>
+                <td>20.63</td>
+                <td>28.07</td>
+                <td>55.37</td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2003.09005" target="_blank">CCT</a></td>
+                <td>✗</td>
+                <td>-</td>
+                <td>77.90</td>
+                <td>81.70</td>
+                <td>34.40</td>
+                <td>93.30</td>
+                <td>44.00</td>
+                <td>6.00</td>
+                <td>9.50</td>
+                <td>4.40</td>
+                <td>00.00</td>
+                <td>52.10</td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2410.10777" target="_blank">Unimatch-v2</a></td>
+                <td>✗</td>
+                <td>-</td>
+                <td class="best-value">90.35</td>
+                <td>93.65</td>
+                <td>72.32</td>
+                <td class="best-value">96.42</td>
+                <td>55.70</td>
+                <td>10.31</td>
+                <td>41.35</td>
+                <td class="best-value">91.89</td>
+                <td>15.85</td>
+                <td>63.09</td>
+              </tr>
+              <tr>
+                <td>CPS-Mars</td>
+                <td>✗</td>
+                <td>-</td>
+                <td>89.92</td>
+                <td class="best-value">94.09</td>
+                <td class="best-value">74.42</td>
+                <td>95.56</td>
+                <td>59.44</td>
+                <td class="best-value">16.16</td>
+                <td class="best-value">68.11</td>
+                <td>67.14</td>
+                <td class="best-value">34.13</td>
+                <td class="best-value">66.55</td>
+              </tr>
+              <tr class="thick-border-top">
+                <td>CPS-Mars</td>
+                <td>Random</td>
+                <td>✗</td>
+                <td>89.92</td>
+                <td class="best-value">94.09</td>
+                <td class="best-value">74.42</td>
+                <td>95.56</td>
+                <td>59.44</td>
+                <td class="best-value">16.16</td>
+                <td>68.11</td>
+                <td>67.14</td>
+                <td>34.33</td>
+                <td>66.55</td>
+              </tr>
+              <tr>
+                <td>CPS-Mars</td>
+                <td>BALD</td>
+                <td>✗</td>
+                <td>89.09</td>
+                <td>92.59</td>
+                <td>74.90</td>
+                <td>95.08</td>
+                <td>59.64</td>
+                <td>14.80</td>
+                <td>66.21</td>
+                <td class="best-value">87.45</td>
+                <td>47.11</td>
+                <td>70.76</td>
+              </tr>
+              <tr>
+                <td>CPS-Mars</td>
+                <td>Least Confidence</td>
+                <td>✗</td>
+                <td>87.28</td>
+                <td>92.70</td>
+                <td>71.27</td>
+                <td>96.19</td>
+                <td>71.59</td>
+                <td>11.58</td>
+                <td>77.14</td>
+                <td>84.51</td>
+                <td>48.90</td>
+                <td>71.24</td>
+              </tr>
+              <tr>
+                <td>CPS-Mars</td>
+                <td>Entropy-based</td>
+                <td>✗</td>
+                <td>88.56</td>
+                <td>94.09</td>
+                <td>72.88</td>
+                <td class="best-value">97.49</td>
+                <td>72.67</td>
+                <td>13.58</td>
+                <td>80.15</td>
+                <td>75.39</td>
+                <td>69.60</td>
+                <td>73.82</td>
+              </tr>
+              <tr>
+                <td>CPS-Mars</td>
+                <td>CAE</td>
+                <td>✗</td>
+                <td class="best-value">90.79</td>
+                <td>91.55</td>
+                <td>74.00</td>
+                <td>96.29</td>
+                <td class="best-value">74.23</td>
+                <td>12.03</td>
+                <td class="best-value">81.89</td>
+                <td>82.69</td>
+                <td class="best-value">71.53</td>
+                <td class="best-value">75.00</td>
+              </tr>
+              <tr class="thick-border-top">
+                <td>CPS-Mars</td>
+                <td>CAE</td>
+                <td>1</td>
+                <td class="best-value">90.79</td>
+                <td>91.55</td>
+                <td>74.00</td>
+                <td>96.29</td>
+                <td class="best-value">74.23</td>
+                <td>12.03</td>
+                <td>81.89</td>
+                <td>82.69</td>
+                <td class="best-value">71.53</td>
+                <td class="best-value">75.00</td>
+              </tr>
+              <tr>
+                <td>CPS-Mars</td>
+                <td>CAE</td>
+                <td>2</td>
+                <td>90.10</td>
+                <td>93.50</td>
+                <td>75.77</td>
+                <td>96.96</td>
+                <td>73.22</td>
+                <td class="best-value">15.66</td>
+                <td>79.45</td>
+                <td>82.20</td>
+                <td>69.26</td>
+                <td>75.13</td>
+              </tr>
+              <tr class="highlight-row thick-border-bottom">
+                <td><strong>CPS-Mars</strong></td>
+                <td><strong>CAE</strong></td>
+                <td><strong>4</strong></td>
+                <td>90.46</td>
+                <td class="best-value">94.11</td>
+                <td class="best-value">76.99</td>
+                <td class="best-value">97.23</td>
+                <td>73.05</td>
+                <td>9.96</td>
+                <td class="best-value">82.44</td>
+                <td class="best-value">86.43</td>
+                <td class="best-value">79.87</td>
+                <td class="best-value">76.73</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="performance-table-note">
+            From left to right, the distribution of each category on the S<sup>5</sup>Mars dataset is: Bedrock(51.65%), Ridge(15.21%), Soil(12.89%), Sky(10.27%), Sand(5.60%), Rock(3.00%), Trace(0.83%), Rover(0.36%), Hole(0.19%).
+          </p>
+        </div>
+    <!--/ Performance Evaluation. -->
+
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Muyao Li, Ruyi Zhou, Liang Ding, Huaiguang Yang, Haibo Gao, and Zongquan Deng},
+  title     = {Three Percent is Enough: Semi-Supervised Martian Segmentation Labeling with Active Learning},
+  journal   = {IEEE Robotics and Automation Letters},
+  year      = {2026},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This page is built using the <a href="https://nerfies.github.io/">Nerfies</a> template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
