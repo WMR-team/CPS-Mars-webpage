@@ -140,23 +140,30 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Accurate, large-scale Martian segmentation datasets are a cornerstone of autonomous scene
-            understanding in support of exploration and navigation in Martian environments. However, 
-            high-quality segmentation labeling on planetary images requires annotators to have professional 
-            extraterrestrial geological knowledge, and even skilled annotators need a long time to label a 
-            single image in detail. In this paper, we propose a semi-automatic annotation method for 
-            Martian scene segmentation. 
-          </p>
-          <p>
-            By integrating a semi-supervised segmentation network architecture with an active learning 
-            strategy, our framework achieves near-fully supervised performance using a minimal amount of 
-            manual annotations, significantly reducing dependence on human experts. Experiments on the 
-            S<sup>5</sup>Mars dataset show that our framework reaches 76.73% mIoU with only 3.38% of the manual 
-            annotations (169 images), corresponding to 95.73% of the performance (80.18% mIoU) of the 
-            official fully supervised model trained on 5000 labeled images. This annotation ratio is 
-            substantially lower than the nearly 20% labeled data typically required by conventional 
-            semi-supervised approaches, highlighting the efficiency of our method for large-scale Martian 
-            scene annotation.
+            Accurate, large-scale Martian segmentation datasets
+are a cornerstone of autonomous scene understanding in support
+of exploration and navigation in Martian environments. However,
+high-quality segmentation labeling on planetary images requires
+annotators to have professional extraterrestrial geological knowl-
+edge, and even skilled annotators need a long time to label
+a single image in detail. In this paper, we propose a semi-
+automatic annotation method for Martian scene segmentation. By
+integrating a semi-supervised segmentation network architecture
+with an active learning strategy, our framework achieves near-
+fully supervised performance using a minimal amount of manual
+annotations, significantly reducing dependence on human experts.
+Experiments on the S<sup>5</sup>Mars dataset show that our framework
+reaches 77.01% mIoU with only 3.12% of the manual annotations
+(169 images), corresponding to 92.23% of the performance
+(83.50% mIoU) of the official fully supervised model trained
+on 5400 labeled images. We also conducted an extended exper-
+iment on AI4Mars, where the proposed framework consistently
+achieved strong performance, exceeding the fully supervised
+baseline by 8.12% using only 3.12% of labeled data. This
+annotation ratio is substantially lower than the nearly 20%
+labeled data typically required by conventional semi-supervised
+approaches, highlighting the efficiency of our method for large-
+scale Martian scene annotation.
           </p>
         </div>
       </div>
@@ -532,6 +539,46 @@
             From left to right, the distribution of each category on the S<sup>5</sup>Mars dataset is: Bedrock(51.65%), Ridge(15.21%), Soil(12.89%), Sky(10.27%), Sand(5.60%), Rock(3.00%), Trace(0.83%), Rover(0.36%), Hole(0.19%).
           </p>
         </div>
+
+     <h3 class="title is-4">Peformance Evaluation</h3>
+        <div class="content performance-table-wrapper">
+          <table class="table is-hoverable is-fullwidth performance-table">
+            <thead>
+              <tr class="thick-border-top">
+                <th colspan="1" class="header-center">Method</th>
+                <th colspan="4" class="header-center">Class IoU (%)</th>
+                <th rowspan="1" class="header-middle">mIoU(%)</th>
+              </tr>
+              <tr>
+                <th>Soil</th>
+                <th>Bedrock</th>
+                <th>Sand</th>
+                <th>Big Rock</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="thick-border-top">
+                <td><a href="https://arxiv.org/abs/2106.05095" target="_blank">AI4Mars</a></td>
+                <td>97.11</td>
+                <td>88.44</td>
+                <td>92.13</td>
+                <td>18.84</td>
+                <td>74.13</td>
+              </tr>
+              <tr>
+                <td><Ours></td>
+                <td>97.63</td>
+                <td>91.83</td>
+                <td>96.24</td>
+                <td>43.30</td>
+                <td>82.25</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="performance-table-note">
+            The Class IoU and mIoU results of the baseline method are derived from the confusion matrix reported in the original AI4Mars paper.
+        </div>
+    
     <!--/ Performance Evaluation. -->
 
     <!-- Visualization result. -->
@@ -544,7 +591,11 @@
         <div class="content has-text-justified">
           <p>
             (1)We compared the visualization results of four active learning query methods in the experiment. It can be seen that all four methods handle the distant view quite well, but our method is more precise in the details. Moreover, our method also performs very well in recognizing close-ups, especially accurately identifying the 'hole' category.
+          </p>
+          <p>
             (2)We compare the qualitative results obtained from four query iterations. The corresponding mIoU values across the four queries show only marginal differences, and the visual results are largely similar. Improvements are mainly reflected in finer details rather than substantial overall changes.
+          </p>
+          <p>
             (3)We further conduct an analysis of illustrative failure cases. Overall, we observe that the models struggle to reliably determine the presence of the rock class, and also perform poorly in distinguishing between the soil and sand classes. This reflects a consistent limitation across different cases.
           </p>
         </div>
