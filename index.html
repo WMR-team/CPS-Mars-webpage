@@ -316,14 +316,14 @@ scale Martian scene annotation.
                 <td>169</td>
                 <td>77.88</td>
                 <td>67.18</td>
-                <td>55.15</td>
+                <td>55.13</td>
                 <td>82.03</td>
                 <td>47.10</td>
                 <td>6.05</td>
                 <td>44.34</td>
                 <td>39.13</td>
                 <td>20.45</td>
-                <td>48.51</td>
+                <td>48.81</td>
               </tr>
               <tr>
                 <td><a href="https://arxiv.org/abs/2106.01226" target="_blank">CPS</a></td>
@@ -346,16 +346,16 @@ scale Martian scene annotation.
                 <td>✗</td>
                 <td>-</td>
                 <td>169</td>
-                <td>77.90</td>
-                <td>81.70</td>
-                <td>34.40</td>
-                <td>93.30</td>
-                <td>44.00</td>
-                <td>6.00</td>
-                <td>9.50</td>
-                <td>4.40</td>
+                <td>81.91</td>
+                <td>81.90</td>
+                <td>53.57</td>
+                <td>92.51</td>
+                <td>51.91</td>
+                <td>11.00</td>
+                <td>19.32</td>
+                <td>21.68</td>
                 <td>00.00</td>
-                <td>52.10</td>
+                <td>45.98</td>
               </tr>
               <tr>
                 <td><a href="https://arxiv.org/abs/2410.10777" target="_blank">Unimatch-v2</a></td>
@@ -414,7 +414,7 @@ scale Martian scene annotation.
                 <td>92.59</td>
                 <td>74.90</td>
                 <td>95.08</td>
-                <td>59.64</td>
+                <td>69.64</td>
                 <td>14.80</td>
                 <td>66.21</td>
                 <td class="best-value">87.45</td>
@@ -434,7 +434,7 @@ scale Martian scene annotation.
                 <td>11.58</td>
                 <td>77.14</td>
                 <td>84.51</td>
-                <td>48.90</td>
+                <td>48.94</td>
                 <td>71.24</td>
               </tr>
               <tr>
@@ -464,7 +464,7 @@ scale Martian scene annotation.
                 <td>96.87</td>
                 <td class="best-value">73.90</td>
                 <td>11.63</td>
-                <td class="best-value">78.16</td>
+                <td></td>78.16</td>
                 <td>86.82</td>
                 <td class="best-value">82.10</td>
                 <td class="best-value">76.52</td>
@@ -528,10 +528,10 @@ scale Martian scene annotation.
                 <td>98.72</td>
                 <td>78.80</td>
                 <td>25.30</td>
-                <td>85.60</td>
                 <td>90.63</td>
                 <td>96.92</td>
-                <td>83.50</td>
+                <td>96.92</td>
+                <td>85.80</td>
               </tr>
             </tbody>
           </table>
@@ -601,6 +601,20 @@ scale Martian scene annotation.
           </p>
         </div>
     <!--/ Visualization result. -->
+
+     <!-- Network Architecture Diagram. -->
+        <h3 class="title is-4" style="margin-top: 3rem;">Framework</h3>
+        <div class="has-text-centered">
+            <img src="./static/images/TP.png"
+                    alt="Comparison of visualization results on S^5mars. Regions highlighted in red indicate comparatively poor predictions."
+                    style="max-width: 100%; height: auto;"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+           We designed four different dropout layers in the network structure, as shown in the following figure. The parameter of the dropout layer in the ASPP section of Feature 1 branch is 0.1, and the parameter of the dropout layer immediately following it is also 0.1. After integrating the results processed from Feature 4, two more dropout layers were applied, with parameters of 0.15 and 0.2 respectively. A moderate dropout rate (e.g., 0.2–0.3) is commonly adopted in practice. In our design, instead of relying on a single high-rate dropout layer that may dominate the network behavior, we adopt multiple low-rate dropout layers to introduce more stable and distributed stochastic regularization. Additionally, a relatively higher dropout rate is applied to the output layer to empirically encourage more diverse predictions.
+          </p>  
+        </div>
+    <!--/ Network Architecture Diagram. -->
 
   </div>
 </section>
