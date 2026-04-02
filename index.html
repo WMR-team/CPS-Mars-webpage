@@ -39,6 +39,25 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <style>
+    /* 确保第二个表格的底部边框样式与第一个表格一致 */
+    .performance-table-wrapper .thick-border-bottom td {
+      border-bottom: 2px solid #ddd;
+    }
+    .performance-table-wrapper .thick-border-bottom {
+      border-bottom: 2px solid #ddd;
+    }
+    /* 保持表格整体风格统一 */
+    .performance-table {
+      border-collapse: collapse;
+    }
+    .performance-table .thick-border-bottom td {
+      border-bottom: 2px solid #888;
+    }
+    .performance-table .thick-border-bottom {
+      border-bottom: 2px solid #888;
+    }
+  </style>
 </head>
 <body>
 
@@ -169,35 +188,6 @@ scale Martian scene annotation.
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Motivation. -->
-        <!-- <h3 class="title is-4" style="margin-top: 3rem;">Motivation</h3>
-        <div class="content has-text-justified">
-          <p>
-            We propose an efficient semi-autonomous framework for the Martian segmentation labeling task,
-            aiming to leverage a very small amount of maunally labeled images to generate tens of thousands
-            of high-quality labels, supporting future Mars exploration and scientific research.
-          </p>
-        </div> -->
-    <!--/ Motivation. -->
-
-    <!-- Contribution. -->
-        <!-- <h3 class="title is-4">Contribution</h3>
-        <div class="content has-text-justified">
-          <p>
-            1. A iterative open-sourced framework combined with semi-supervised learning and active query 
-            strategy is developed to produce large-scale Martian segmentation dataset with minimize human expert labelling effort.
-          </p>
-          <p>
-            2. A CPS-Mars architecture based on cross pseudo supervision (CPS) is proposed for SSL with self-defined loss function
-            dealing with inter-class imbalance problem in Mars scene dataset.
-          </p>
-          <p>
-            3. Performance of our framework with optimized modules and strategies reaches 95.73% accuracy on labeling S^5Mars 
-            segmentation dataset with only nearly 3% of manually labeled images.
-          </p>
-        </div> -->
-    <!--/ Contribution. -->
 
     <!-- Framework. -->
         <h3 class="title is-4" style="margin-top: 3rem;">Framework</h3>
@@ -565,7 +555,8 @@ scale Martian scene annotation.
                 <td>18.84</td>
                 <td>74.13</td>
               </tr>
-              <tr>
+              <!-- 为第二表格的最后一行添加下边框类 thick-border-bottom，以满足用户需求 -->
+              <tr class="thick-border-bottom">
                 <td><strong>Ours</strong></td>
                 <td>97.63</td>
                 <td>91.83</td>
@@ -618,19 +609,6 @@ scale Martian scene annotation.
 
   </div>
 </section>
-
-
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Muyao Li, Ruyi Zhou, Liang Ding, Huaiguang Yang, Haibo Gao, and Zongquan Deng},
-  title     = {Three Percent is Enough: Semi-Supervised Martian Segmentation Labeling with Active Learning},
-  journal   = {IEEE Robotics and Automation Letters},
-  year      = {2026},
-}</code></pre>
-  </div>
-</section> -->
 
 
 <footer class="footer">
